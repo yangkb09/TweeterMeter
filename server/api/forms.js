@@ -40,14 +40,6 @@ router.post('/', async (req, res, next) => {
     let cleanedTweets
 
     //GET Twitter data (user by un, then user's tweet timeline)
-    //setState/setTimeout/twitterClient.get are async functions, but don't start with "async"
-    //callbacks came before promises (these funcs are CBs)
-    //moment an async func is called,
-    //twitter.get making http call - this whole thing gets dumped into the thread pool (and everything inside of it), setting cleaned
-    //tweets is waiting
-    //doing the document assignment
-    //functon that assins cleanedTweets can't run until all other lines run
-    //anytime you have an async function, none of the contents of the function will run until everyting is off the callstack
 
     //delete response if not using
     twitterClient.get(
@@ -61,7 +53,7 @@ router.post('/', async (req, res, next) => {
           const profileImg = profile.profile_image_url.replace(/_normal/, '')
           const profileBanner = profile.profile_banner_url
 
-          console.log('twitter user response: ', response);
+          console.log('twitter user response: ', response)
           //GET Twitter user's tweet timeline (tweets)
           twitterClient.get(
             '/statuses/user_timeline.json',
@@ -78,9 +70,6 @@ router.post('/', async (req, res, next) => {
                   /(?:https?|ftp):\/\/[\n\S]+/g,
                   ''
                 )
-                // console.log('TWEETS: ', tweets)
-                // console.log('cleanedTweets inside twitter get: ', cleanedTweets)
-                // console.log('TYPEOF CLEANED TWEETS: ', typeof text)
 
                 const document = {
                   content: cleanedTweets,
@@ -97,8 +86,7 @@ router.post('/', async (req, res, next) => {
                 console.log(`Sentiment score: ${sentiment.score}`)
                 console.log(`Sentiment magnitude: ${sentiment.magnitude}`)
 
-
-//stuff is an instance from the DB
+                //stuff is an instance from the DB
 
                 //QUEST: how to rewrite bottom line? if i dont need to send data to db, i dont want to
                 const stuff = {
@@ -107,51 +95,12 @@ router.post('/', async (req, res, next) => {
                   magnitude: sentiment.magnitude
                 }
                 res.json(stuff)
-
-                // .then(stuff => {
-                //   console.log('stuff', stuff)
-                //   res.json(stuff)
-
-                // }
-
               }
             }
           )
         }
       }
     )
-
-    //text's value isn't getting rewritten on ln66, it's val remains what's on ln 37
-
-    // const document = {
-    //   content: text,
-    //   type: 'PLAIN_TEXT'
-    // }
-    // console.log('CLEANEDTWEETS oUTSIDE GET: ', cleanedTweets)
-    // console.log('DOCUMENT: ', document)
-
-    // // const document = {
-    // //   content: cleanedTweets,
-    // //   type: 'PLAIN_TEXT'
-    // // }
-
-    // // Detects the sentiment of the text
-    // const [result] = await client.analyzeSentiment({document: document})
-    // const sentiment = result.documentSentiment
-
-    // console.log(`Text: ${text}`)
-    // console.log(`Sentiment score: ${sentiment.score}`)
-    // console.log(`Sentiment magnitude: ${sentiment.magnitude}`)
-
-    // // console.log(`Text: ${cleanedTweets}`)
-    // // console.log(`Sentiment score: ${sentiment.score}`)
-    // // console.log(`Sentiment magnitude: ${sentiment.magnitude}`)
-
-    // Form.create({
-    //   formText: text, //this may be twitter UN now
-    //   score: sentiment.score,
-    //   magnitude: sentiment.magnitude
-    // }).then(stuff => res.json(stuff))
   } catch (err) {
     next(err)
   }

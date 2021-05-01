@@ -10,21 +10,24 @@ export class SentimentScore extends React.Component {
   }
 
   render() {
-    if (this.props.form) {
+    if (this.props.form[0]) {
+      {console.log('THIS.PROPS: ', this.props)}
+      {console.log('THIS.PROPS.FORM[0]: ', this.props.form[0])}
       return (
         <div className="card">
           Analysis
           {/* {console.log('RENDER this.props ', this.props)}
           {console.log('RENDER this.state ', this.state)} */}
           <div className="container">
-            {this.props.form.map(oneForm => {
+            Score: {this.props.form[0].score}
+            {/* {this.props.form.map(oneForm => {
               return (
                 <div key={oneForm.id}>
                   Score: {oneForm.score}
                   magnitude: {oneForm.magnitude}
                 </div>
               )
-            })}
+            })} */}
           </div>
         </div>
       )

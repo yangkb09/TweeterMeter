@@ -86,7 +86,9 @@ router.post('/', async (req, res, next) => {
                 const stuff = {
                   formText: cleanedTweets,
                   score: sentiment.score,
-                  magnitude: sentiment.magnitude
+                  magnitude: sentiment.magnitude,
+                  profileImg: profileImg,
+                  profileBanner: profileBanner,
                 }
                 res.json(stuff)
               }

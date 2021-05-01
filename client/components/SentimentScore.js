@@ -16,17 +16,10 @@ export class SentimentScore extends React.Component {
           {/* {console.log('RENDER this.props ', this.props)}
           {console.log('RENDER this.state ', this.state)} */}
           <div className="container">
-            {/* RENDER PROFILE PIC HERE */}
+            <img src={this.props.form.profileImg} alt="Twitter User Profile Picture"/>
+            <img src={this.props.form.profileBanner} alt="Twitter User Profile Banner"/>
             Score: {this.props.form.score}
             Magnitude: {this.props.form.magnitude}
-            {/* {this.props.form.map(oneForm => {
-              return (
-                <div key={oneForm.id}>
-                  Score: {oneForm.score}
-                  magnitude: {oneForm.magnitude}
-                </div>
-              )
-            })} */}
           </div>
         </div>
       )

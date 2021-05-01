@@ -1,19 +1,17 @@
 const router = require('express').Router()
 const Form = require('../db/models/form')
 const Twitter = require('twitter') //An asynchronous client library for the Twitter REST and Streaming API's.
-// const rp = require('request-promise')
 
 const twitterClient = new Twitter({
   consumer_key: process.env.TWITTER_API_KEY,
   consumer_secret: process.env.TWITTER_SECRET_KEY,
   access_token_key: process.env.TWITTER_ACCESS_TOKEN,
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-  // bearer_token: process.env.TWITTER_BEARER_TOKEN
 })
 
 router.get('/', async (req, res, next) => {
   try {
-    const scores = await Form.findAll({
+    const scores = await Form.findOne({
       attributes: ['id', 'score', 'magnitude']
     })
     res.send(scores)
@@ -33,9 +31,8 @@ router.post('/', async (req, res, next) => {
       projectId: 'sentiment-analys-1611430622359'
     })
 
-    // The text to analyze (should be users cleaned tweets)
+    // The text to analyze: an user's cleaned tweets
     let text = req.body.formText
-    console.log('REQ.BODY: ', req.body)
     const twitterUsername = req.body.formText
     let cleanedTweets
 
@@ -86,9 +83,6 @@ router.post('/', async (req, res, next) => {
                 console.log(`Sentiment score: ${sentiment.score}`)
                 console.log(`Sentiment magnitude: ${sentiment.magnitude}`)
 
-                //stuff is an instance from the DB
-
-                //QUEST: how to rewrite bottom line? if i dont need to send data to db, i dont want to
                 const stuff = {
                   formText: cleanedTweets,
                   score: sentiment.score,

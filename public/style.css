@@ -1,6 +1,6 @@
 body {
-  font-family: 'Palatino', sans-serif;
-  background-color: #8e9aaf;
+  font-family: 'Helvetica Neue', 'Palatino', sans-serif;
+  background-color: #657786;
   color: white;
 }
 
@@ -36,7 +36,7 @@ input[type='text']:focus {
   border-radius: 5px;
   justify-content: space-between;
   font-size: 25px;
-  background-color: #cbc0d3;
+  background-color: #AAB8C2;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -52,7 +52,7 @@ input[type='text']:focus {
 nav {
   display: flex;
   justify-content: space-around;
-  background-color: #efd3d7;
+  background-color: #AAB8C2;
   align-items: flex-end;
   margin: 1em;
   color: white;
@@ -76,7 +76,7 @@ button {
   outline: 0;
   padding: 12px;
   color: white;
-  background-color: #b6e5fb;
+  background-color: #1DA1F2;
   text-align: center;
   cursor: pointer;
   border-radius: 5px;

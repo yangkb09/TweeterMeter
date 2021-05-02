@@ -24,7 +24,7 @@ export class SentimentScore extends React.Component {
         </div>
       )
     } else {
-      return <div>nothing here</div>
+      return <div>No Tweets Yet</div>
     }
   }
 }

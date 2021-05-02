@@ -11,7 +11,8 @@ export const UserHome = props => {
   const {email} = props
 
   return (
-    <div>
+    <div className="gridContainer">
+      <img src="/images/twitterLogo.png" alt="White Twitter Logo" id="twitterLogo" />
       <TextForm />
       <SentimentScore />
     </div>

@@ -12,16 +12,32 @@ label {
   display: block;
 }
 
-input[type='text'] {
-  width: 100%;
+input {
+  /* background-image: url('./images/searchIcon.png');
+  background-size: 30px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat; */
+  /* padding-left: 100px; */
+  border-radius: 25px;
+  border: #aab8c2;
   padding: 12px 20px;
   margin: 8px 0;
+  width: 100%;
   box-sizing: border-box;
   resize: vertical;
+  background-color: white;
 }
 
-input[type='text']:focus {
-  background-color: #feeafa;
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+input:focus {
+  background-color: #e1e8ed;
+  border: 2px solid #1da1f2;
 }
 
 .card {
@@ -36,7 +52,7 @@ input[type='text']:focus {
   border-radius: 5px;
   justify-content: space-between;
   font-size: 25px;
-  background-color: #AAB8C2;
+  background-color: #aab8c2;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -52,7 +68,7 @@ input[type='text']:focus {
 nav {
   display: flex;
   justify-content: space-around;
-  background-color: #AAB8C2;
+  background-color: #aab8c2;
   align-items: flex-end;
   margin: 1em;
   color: white;
@@ -76,7 +92,7 @@ button {
   outline: 0;
   padding: 12px;
   color: white;
-  background-color: #1DA1F2;
+  background-color: #1da1f2;
   text-align: center;
   cursor: pointer;
   border-radius: 5px;

@@ -84,7 +84,6 @@ router.post('/', async (req, res, next) => {
                 // console.log(`Sentiment magnitude: ${sentiment.magnitude}`)
 
                 const stuff = {
-                  // cleanedTweets: cleanedTweets,
                   score: sentiment.score,
                   magnitude: sentiment.magnitude,
                   profileImg: profileImg,

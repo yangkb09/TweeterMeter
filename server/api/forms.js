@@ -46,11 +46,11 @@ router.post('/', async (req, res, next) => {
         if (error) {
           throw error
         } else {
-          // console.log('TWITTER PROFILE: ', profile)
+          console.log('TWITTER PROFILE: ', profile)
           const profileImg = profile.profile_image_url.replace(/_normal/, '')
           const profileBanner = profile.profile_banner_url
 
-          console.log('twitter user response: ', response)
+          // console.log('twitter user response: ', response)
           //GET Twitter user's tweet timeline (tweets)
           twitterClient.get(
             '/statuses/user_timeline.json',
@@ -79,17 +79,21 @@ router.post('/', async (req, res, next) => {
                 })
                 const sentiment = result.documentSentiment
 
-                console.log(`Text: ${cleanedTweets}`)
-                console.log(`Sentiment score: ${sentiment.score}`)
-                console.log(`Sentiment magnitude: ${sentiment.magnitude}`)
+                // console.log(`Text: ${cleanedTweets}`)
+                // console.log(`Sentiment score: ${sentiment.score}`)
+                // console.log(`Sentiment magnitude: ${sentiment.magnitude}`)
 
                 const stuff = {
-                  formText: cleanedTweets,
+                  // cleanedTweets: cleanedTweets,
                   score: sentiment.score,
                   magnitude: sentiment.magnitude,
                   profileImg: profileImg,
                   profileBanner: profileBanner,
+                  screenName: profile.screen_name,
+                  name: profile.name,
+                  location: profile.location
                 }
+                console.log('stuff: ', stuff)
                 res.json(stuff)
               }
             }

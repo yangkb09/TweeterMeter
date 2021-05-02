@@ -8,23 +8,24 @@ export class SentimentScore extends React.Component {
   }
 
   render() {
-    if (this.props) {
+    if (this.props.form) {
       {console.log('THIS.PROPS: ', this.props)}
       return (
         <div className="card">
           Analysis
-          {/* {console.log('RENDER this.props ', this.props)}
-          {console.log('RENDER this.state ', this.state)} */}
           <div className="container">
-            <img src={this.props.form.profileImg} alt="Twitter User Profile Picture"/>
             <img src={this.props.form.profileBanner} alt="Twitter User Profile Banner"/>
+            <img src={this.props.form.profileImg} alt="Twitter User Profile Picture"/>
+            @{this.props.form.screenName}
+            {this.props.form.name}
+            {this.props.form.location}
             Score: {this.props.form.score}
             Magnitude: {this.props.form.magnitude}
           </div>
         </div>
       )
     } else {
-      return <div>No Tweets Yet</div>
+      return <div className="card">Analysis</div>
     }
   }
 }

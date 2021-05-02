@@ -34,8 +34,6 @@ const initialState = {}
 const formReducer = (state = initialState, action) => {
   switch (action.type) {
     case SUBMIT_FORM:
-      console.log('action.text: ', action.text)
-      // return [...state, action.text]
       return action.text
     case GET_SCORE:
       return action.score

@@ -6,6 +6,7 @@ export class SentimentScore extends React.Component {
   constructor(props) {
     super(props)
     this.getSentimentScore = this.getSentimentScore.bind(this)
+    this.getMagnitude = this.getMagnitude.bind(this)
   }
   componentDidMount() {
     this.props.getScore()
@@ -21,9 +22,14 @@ export class SentimentScore extends React.Component {
     if (score <= 1) {return ['Very Positive']; }
   }
 
-  // getMagnitude(magnitude) {
-
-  // }
+  getMagnitude(magnitude) {
+    if (magnitude < 2) {return ['Very Low']; }
+    if (magnitude < 5) {return ['Low']; }
+    if (magnitude < 10) {return ['Medium']; }
+    if (magnitude < 15) {return ['Medium-high']; }
+    if (magnitude < 25) {return ['High']; }
+    if (magnitude < 100) {return ['Very High']; }
+  }
 
   render() {
     if (this.props.form) {
@@ -48,7 +54,7 @@ export class SentimentScore extends React.Component {
               Sentiment: {this.getSentimentScore(this.props.form.score)}
             </div>
             <div id="magnitude">
-              Magnitude: {this.props.form.magnitude}
+              Magnitude: {this.getMagnitude(this.props.form.magnitude)}
             </div>
           </div>
         </div>

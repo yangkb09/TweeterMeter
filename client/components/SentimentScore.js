@@ -13,22 +13,22 @@ export class SentimentScore extends React.Component {
   }
 
   getSentimentScore(score) {
-    if (score < -.75) {return ['Very Negative']; }
-    if (score < -.3) {return ['Negative']; }
-    if (score < -.05) {return ['Slightly Negative']; }
-    if (score < .05) {return ['Neutral']; }
-    if (score < .3) {return ['Slightly Positive']; }
-    if (score < .75) {return ['Positive']; }
-    if (score <= 1) {return ['Very Positive']; }
+    if (score < -.75) {return ['Very Negative', score.toFixed(2)]; }
+    if (score < -.3) {return ['Negative', score.toFixed(2)]; }
+    if (score < -.05) {return ['Slightly Negative', score.toFixed(2)]; }
+    if (score < .05) {return ['Neutral', score.toFixed(2)]; }
+    if (score < .3) {return ['Slightly Positive', score.toFixed(2)]; }
+    if (score < .75) {return ['Positive', score.toFixed(2)]; }
+    if (score <= 1) {return ['Very Positive', score.toFixed(2)]; }
   }
 
   getMagnitude(magnitude) {
-    if (magnitude < 2) {return ['Very Low']; }
-    if (magnitude < 5) {return ['Low']; }
-    if (magnitude < 10) {return ['Medium']; }
-    if (magnitude < 15) {return ['Medium-high']; }
-    if (magnitude < 25) {return ['High']; }
-    if (magnitude < 100) {return ['Very High']; }
+    if (magnitude < 2) {return ['Very Low', magnitude.toFixed(2)]; }
+    if (magnitude < 5) {return ['Low', magnitude.toFixed(2)]; }
+    if (magnitude < 10) {return ['Medium', magnitude.toFixed(2)]; }
+    if (magnitude < 15) {return ['Medium-high', magnitude.toFixed(2)]; }
+    if (magnitude < 25) {return ['High', magnitude.toFixed(2)]; }
+    if (magnitude < 100) {return ['Very High', magnitude.toFixed(2)]; }
   }
 
   render() {

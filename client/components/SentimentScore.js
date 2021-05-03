@@ -3,9 +3,27 @@ import {connect} from 'react-redux'
 import {_getScore} from '../store/form'
 
 export class SentimentScore extends React.Component {
+  constructor(props) {
+    super(props)
+    this.getSentimentScore = this.getSentimentScore.bind(this)
+  }
   componentDidMount() {
     this.props.getScore()
   }
+
+  getSentimentScore(score) {
+    if (score < -.75) {return ['Very Negative']; }
+    if (score < -.3) {return ['Negative']; }
+    if (score < -.05) {return ['Slightly Negative']; }
+    if (score < .05) {return ['Neutral']; }
+    if (score < .3) {return ['Slightly Positive']; }
+    if (score < .75) {return ['Positive']; }
+    if (score <= 1) {return ['Very Positive']; }
+  }
+
+  // getMagnitude(magnitude) {
+
+  // }
 
   render() {
     if (this.props.form) {
@@ -27,7 +45,7 @@ export class SentimentScore extends React.Component {
               {this.props.form.location}
             </div>
             <div id="score">
-              Score: {this.props.form.score}
+              Sentiment: {this.getSentimentScore(this.props.form.score)}
             </div>
             <div id="magnitude">
               Magnitude: {this.props.form.magnitude}

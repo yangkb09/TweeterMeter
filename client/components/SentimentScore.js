@@ -12,13 +12,26 @@ export class SentimentScore extends React.Component {
       return (
         <div className="card gridContainer">
           <div className="container">
-            <img src={this.props.form.profileBanner} alt="Twitter User Profile Banner" id="twitterProfBanner"/>
-            <img src={this.props.form.profileImg} alt="Twitter User Profile Picture" id="twitterProfPic"/>
-            @{this.props.form.screenName}
-            {this.props.form.name}
-            {this.props.form.location}
-            Score: {this.props.form.score}
-            Magnitude: {this.props.form.magnitude}
+            <div id="picContainer">
+              <img src={this.props.form.profileBanner} alt="Twitter User Profile Banner" id="twitterProfBanner"/>
+              <img src={this.props.form.profileImg} alt="Twitter User Profile Picture" id="twitterProfPic"/>
+            </div>
+            <div id="name">
+              {this.props.form.name}
+            </div>
+            <div id="screenName">
+              @{this.props.form.screenName}
+            </div>
+            <div id="location">
+            <img src="/images/locationIcon.png"/>
+              {this.props.form.location}
+            </div>
+            <div id="score">
+              Score: {this.props.form.score}
+            </div>
+            <div id="magnitude">
+              Magnitude: {this.props.form.magnitude}
+            </div>
           </div>
         </div>
       )

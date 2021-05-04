@@ -90,7 +90,7 @@ export class SentimentScore extends React.Component {
         </div>
       )
     } else {
-      return <div className="card">Analysis</div>
+      return <div className="card gridContainer" id="sentimentCard">Analysis</div>
     }
   }
 }

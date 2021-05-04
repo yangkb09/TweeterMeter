@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-weight: bold;
 }
 
 .gridContainer {
@@ -25,10 +26,7 @@
 
 #formCard {
   grid-area: form;
-}
-
-#sentimentCard {
-  grid-area: sentiment;
+  width: 100%;
 }
 
 .row::after {
@@ -36,6 +34,10 @@
   clear: both;
   display: table;
 }
+#sentimentCard {
+  grid-area: sentiment;
+}
+
 
 body {
   font-family: 'Helvetica Neue', 'Palatino', sans-serif;
@@ -139,7 +141,7 @@ button {
   background-color: #1da1f2;
   text-align: center;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 25px;
 }
 
 #twitterProfPic {

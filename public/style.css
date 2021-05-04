@@ -9,10 +9,10 @@
     'title title title title title title'
     'logo logo form form form form'
     'logo logo sentiment sentiment sentiment sentiment';
-    /* the repeat() function allows you to repeat columns as many times as needed */
-    /* 1fr is what tells the browser to distribute the space between the columns so that each column equally gets one fraction of that space */
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 10px;
+  /* the repeat() function allows you to repeat columns as many times as needed */
+  /* 1fr is what tells the browser to distribute the space between the columns so that each column equally gets one fraction of that space */
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
 }
 
 #title {
@@ -45,7 +45,6 @@
 #sentimentCard {
   grid-area: sentiment;
 }
-
 
 body {
   font-family: 'Helvetica Neue', 'Palatino', sans-serif;
@@ -155,25 +154,30 @@ button {
 #twitterProfPic {
   border-radius: 50%;
   max-width: 25%;
-  outline: #aab8c2,
+  outline: #aab8c2;
 }
 
 #twitterProfBanner {
-  width: 100%
+  width: 100%;
   /* position: absolute; */
   /* z-index: -1; */
 }
 
 #screenName {
-  color: #E1E8ED;
+  color: #e1e8ed;
   font-size: 18px;
 }
 
 #location {
-  color: #E1E8ED;
+  color: #e1e8ed;
   font-size: 18px;
 }
 
 .secondary {
   font-weight: normal;
+}
+
+img#location {
+  max-width: 5%;
+  color: #e1e8ed;
 }

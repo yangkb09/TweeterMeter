@@ -77,8 +77,7 @@ export class SentimentScore extends React.Component {
             <div id="name">{this.props.form.name}</div>
             <div className="secondary" id="screenName">@{this.props.form.screenName}</div>
             <div className="secondary" id="location">
-              {/* <img src="/images/locationIcon.png" /> */}
-              <img src="/images/maps-and-flags.png" id="location" />
+              <img src="/images/locationMarker.png" id="location" />
               {this.props.form.location}
             </div>
             <div id="score">

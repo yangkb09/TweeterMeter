@@ -10,6 +10,7 @@
     'logo logo form form form form'
     'logo logo sentiment sentiment sentiment sentiment';
     /* the repeat() function allows you to repeat columns as many times as needed */
+    /* 1fr is what tells the browser to distribute the space between the columns so that each column equally gets one fraction of that space */
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 10px;
 }
@@ -171,4 +172,8 @@ button {
 #location {
   color: #E1E8ED;
   font-size: 18px;
+}
+
+.secondary {
+  font-weight: normal;
 }

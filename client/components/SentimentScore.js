@@ -58,6 +58,8 @@ export class SentimentScore extends React.Component {
   }
 
   render() {
+    const sentiment = this.getSentimentScore(this.props.form.score) || [];
+    const magnitude = this.getMagnitude(this.props.form.magnitude) || [];
     if (this.props.form) {
       return (
         <div className="card" id="sentimentCard">
@@ -75,22 +77,40 @@ export class SentimentScore extends React.Component {
               />
             </div>
             <div id="name">{this.props.form.name}</div>
-            <div className="secondary" id="screenName">@{this.props.form.screenName}</div>
-            <div className="secondary" id="location">
+            <span className="secondary, inlineBlock" id="screenName">
+              @{this.props.form.screenName}
+            </span>
+            <span className="secondary, inlineBlock" id="location">
               <img src="/images/locationMarker.png" id="location" />
               {this.props.form.location}
-            </div>
+            </span>
             <div id="score">
-              Sentiment: <span className="secondary">{this.getSentimentScore(this.props.form.score)}</span>
+              Sentiment:{' '}
+              <span className="secondary, inlineBlock">
+                {sentiment[0]},
+              </span>
+              <span className="secondary, inlineBlock">
+                {sentiment[1]}
+              </span>
             </div>
             <div id="magnitude">
-              Magnitude: <span className="secondary">{this.getMagnitude(this.props.form.magnitude)}</span>
+              Magnitude:{' '}
+              <span className="secondary, inlineBlock">
+                {magnitude[0]},
+              </span>
+              <span className="secondary, inlineBlock">
+                {magnitude[1]}
+              </span>
             </div>
           </div>
         </div>
       )
     } else {
-      return <div className="card" id="sentimentCard">Analysis</div>
+      return (
+        <div className="card" id="sentimentCard">
+          Analysis
+        </div>
+      )
     }
   }
 }

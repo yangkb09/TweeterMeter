@@ -26,7 +26,7 @@ export class TextForm extends React.Component {
   }
   render() {
     return (
-      <div className="card gridContainer" id="formCard">
+      <div className="card" id="formCard">
         <div>
           <form onSubmit={this.handleSubmit}>
             <div className="container">

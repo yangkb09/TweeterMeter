@@ -9,6 +9,8 @@
     'title title title title title title'
     'logo logo form form form form'
     'logo logo sentiment sentiment sentiment sentiment';
+    /* the repeat() function allows you to repeat columns as many times as needed */
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 10px;
 }
 
@@ -19,7 +21,8 @@
 
 #twitterLogo {
   grid-area: logo;
-  max-width: 50%;
+  max-width: 100%;
+  /* place-self: center; */
   /* background-image: url("/images/twitterLogo.png"); */
   /* object-fit: cover;
   display: block; */

@@ -60,7 +60,7 @@ export class SentimentScore extends React.Component {
   render() {
     if (this.props.form) {
       return (
-        <div className="card gridContainer" id="sentimentCard">
+        <div className="card" id="sentimentCard">
           <div className="container">
             <div id="picContainer">
               <img
@@ -90,7 +90,7 @@ export class SentimentScore extends React.Component {
         </div>
       )
     } else {
-      return <div className="card gridContainer" id="sentimentCard">Analysis</div>
+      return <div className="card" id="sentimentCard">Analysis</div>
     }
   }
 }

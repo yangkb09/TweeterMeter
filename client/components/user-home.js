@@ -13,8 +13,8 @@ export const UserHome = props => {
   return (
     <div className="gridContainer">
       <div id="title">TweeterMeter</div>
-      <div id="twitterLogo"/>
-      {/* <img src="/images/twitterLogo.png" alt="White Twitter Logo" id="twitterLogo" /> */}
+      {/* <div id="twitterLogo"/> */}
+      <img src="/images/twitterLogo.png" alt="White Twitter Logo" id="twitterLogo" />
       <TextForm />
       <SentimentScore />
     </div>

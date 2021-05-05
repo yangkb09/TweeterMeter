@@ -9,8 +9,6 @@
     'title title title title title title'
     'logo logo form form form form'
     'logo logo sentiment sentiment sentiment sentiment';
-  /* the repeat() function allows you to repeat columns as many times as needed */
-  /* 1fr is what tells the browser to distribute the space between the columns so that each column equally gets one fraction of that space */
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 10px;
 }
@@ -23,25 +21,12 @@
 #twitterLogo {
   grid-area: logo;
   max-width: 100%;
-  /* place-self: center; */
-  /* background-image: url("/images/twitterLogo.png"); */
-  /* object-fit: cover;
-  display: block; */
-  /* max-width: 100%; */
-  /* max-height: 100%; */
-  /* float: left; */
 }
 
 #formCard {
   grid-area: form;
-  /* width: 100%; */
 }
 
-/* .row::after {
-  content: "";
-  clear: both;
-  display: table;
-} */
 #sentimentCard {
   grid-area: sentiment;
 }
@@ -61,11 +46,6 @@ label {
 }
 
 input {
-  /* background-image: url('./images/searchIcon.png');
-  background-size: 30px;
-  background-position: 10px 10px;
-  background-repeat: no-repeat; */
-  /* padding-left: 100px; */
   border-radius: 25px;
   border: #aab8c2;
   padding: 12px 20px;
@@ -76,7 +56,7 @@ input {
   background-color: #e1e8ed;
 }
 
-/* remove Chrome's default focus outline */
+/* Remove Chrome's default focus outline */
 input:focus,
 select:focus,
 textarea:focus,
@@ -84,7 +64,7 @@ button:focus {
   outline: none;
 }
 
-/* replace with styled default focus outline */
+/* Replace with styled default focus outline */
 input:focus {
   background-color: white;
   border: 2px solid #1da1f2;
@@ -92,11 +72,8 @@ input:focus {
 
 .card {
   /* Add shadows to create the "card" effect */
-  /* grid-area: form; */
   padding: 20px 30px;
   height: auto;
-  /* display: flex; */
-  /* width: 66.66%; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 10px;
   transition: 0.2s;
@@ -104,7 +81,6 @@ input:focus {
   justify-content: space-between;
   font-size: 25px;
   background-color: #aab8c2;
-  /* float: left */
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -115,29 +91,10 @@ input:focus {
 /* Add some padding inside the card container */
 .container {
   padding: 2px 16px;
-  /* float: left; */
 }
-
-/* nav {
-  display: flex;
-  justify-content: space-around;
-  background-color: #aab8c2;
-  align-items: flex-end;
-  margin: 1em;
-  color: white;
-  font-size: 17px;
-  border-radius: 5px 5px 0 0;
-}
-
-nav a {
-  display: inline-block;
-  color: white;
-  margin: 1em;
-} */
 
 form div {
   margin: 1em;
-  /* display: inline-block; */
 }
 
 button {
@@ -167,10 +124,7 @@ button:hover {
 
 #twitterProfBanner {
   width: 75%;
-  /* float: left;*/
   padding: 5px;
-  /* position: absolute; */
-  /* z-index: -1; */
 }
 
 #screenName {

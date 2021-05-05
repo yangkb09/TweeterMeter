@@ -9,12 +9,20 @@ const twitterClient = new Twitter({
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 })
 
+// router.get('/', async (req, res, next) => {
+//   try {
+//     const scores = await Form.findOne({
+//       attributes: ['id', 'score', 'magnitude']
+//     })
+//     res.send(scores)
+//   } catch (err) {
+//     next(err)
+//   }
+// })
+
 router.get('/', async (req, res, next) => {
   try {
-    const scores = await Form.findOne({
-      attributes: ['id', 'score', 'magnitude']
-    })
-    res.send(scores)
+    res.send([])
   } catch (err) {
     next(err)
   }

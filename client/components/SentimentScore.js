@@ -60,7 +60,7 @@ export class SentimentScore extends React.Component {
   render() {
     const sentiment = this.getSentimentScore(this.props.form.score) || [];
     const magnitude = this.getMagnitude(this.props.form.magnitude) || [];
-    if (this.props.form) {
+    if (Object.keys(this.props.form).length > 0) {
       return (
         <div className="card" id="sentimentCard">
           <div className="container">

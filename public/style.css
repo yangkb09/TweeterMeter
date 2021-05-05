@@ -155,14 +155,20 @@ button:hover {
   background-color: #0e9af1;
 }
 
+.picContainer {
+  float: left;
+}
+
 #twitterProfPic {
   border-radius: 50%;
   max-width: 25%;
-  outline: #aab8c2;
+  padding: 5px;
 }
 
 #twitterProfBanner {
-  width: 100%;
+  width: 75%;
+  /* float: left;*/
+  padding: 5px;
   /* position: absolute; */
   /* z-index: -1; */
 }

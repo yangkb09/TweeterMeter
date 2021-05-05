@@ -66,14 +66,14 @@ export class SentimentScore extends React.Component {
           <div className="container">
             <div id="picContainer">
               <img
-                src={this.props.form.profileBanner}
-                alt="Twitter User Profile Banner"
-                id="twitterProfBanner"
-              />
-              <img
                 src={this.props.form.profileImg}
                 alt="Twitter User Profile Picture"
                 id="twitterProfPic"
+              />
+              <img
+                src={this.props.form.profileBanner}
+                alt="Twitter User Profile Banner"
+                id="twitterProfBanner"
               />
             </div>
             <div id="name">{this.props.form.name}</div>

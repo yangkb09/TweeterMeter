@@ -107,9 +107,7 @@ export class SentimentScore extends React.Component {
       )
     } else {
       return (
-        <div className="card" id="sentimentCard">
-          Analysis
-        </div>
+        <div></div>
       )
     }
   }

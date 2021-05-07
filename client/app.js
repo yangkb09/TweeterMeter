@@ -1,5 +1,5 @@
 import React from 'react'
-import UserHome from './components/user-home'
+import UserHome from './components/UserHome'
 
 const App = () => {
   return (

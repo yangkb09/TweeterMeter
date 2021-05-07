@@ -1,5 +1,4 @@
 const router = require('express').Router()
-// const Form = require('../db/models/form')
 const Twitter = require('twitter') //An asynchronous client library for the Twitter REST and Streaming API's.
 
 const twitterClient = new Twitter({
@@ -28,31 +27,24 @@ router.post('/', async (req, res, next) => {
       projectId: 'sentiment-analys-1611430622359'
     })
 
-    // The text to analyze: an user's cleaned tweets
-    let text = req.body.formText
     const twitterUsername = req.body.formText
-    let cleanedTweets
 
-    //GET Twitter data (user by un, then user's tweet timeline)
-
-    //delete response if not using
+    //GET Twitter user by username
     twitterClient.get(
       '/users/show.json',
       {screen_name: twitterUsername},
-      function(error, profile, response) {
+      function(error, profile) {
         if (error) {
           throw error
         } else {
-          console.log('TWITTER PROFILE: ', profile)
           const profileImg = profile.profile_image_url.replace(/_normal/, '')
           const profileBanner = profile.profile_banner_url
 
-          // console.log('twitter user response: ', response)
-          //GET Twitter user's tweet timeline (tweets)
+          //GET Twitter user's tweet timeline
           twitterClient.get(
             '/statuses/user_timeline.json',
             {screen_name: twitterUsername, count: 200, include_rts: false},
-            async function(error, tweets, response) {
+            async function(error, tweets) {
               if (error) {
                 throw error
               } else {
@@ -60,7 +52,8 @@ router.post('/', async (req, res, next) => {
                 for (let i = 0; i < tweets.length; i++) {
                   holder += tweets[i].text
                 }
-                cleanedTweets = holder.replace(
+                // The text to analyze: an user's cleaned tweets
+                const cleanedTweets = holder.replace(
                   /(?:https?|ftp):\/\/[\n\S]+/g,
                   ''
                 )
@@ -76,11 +69,7 @@ router.post('/', async (req, res, next) => {
                 })
                 const sentiment = result.documentSentiment
 
-                // console.log(`Text: ${cleanedTweets}`)
-                // console.log(`Sentiment score: ${sentiment.score}`)
-                // console.log(`Sentiment magnitude: ${sentiment.magnitude}`)
-
-                const stuff = {
+                const googleAndTwitterData = {
                   score: sentiment.score,
                   magnitude: sentiment.magnitude,
                   profileImg: profileImg,
@@ -89,8 +78,8 @@ router.post('/', async (req, res, next) => {
                   name: profile.name,
                   location: profile.location
                 }
-                console.log('stuff: ', stuff)
-                res.json(stuff)
+
+                res.json(googleAndTwitterData)
               }
             }
           )

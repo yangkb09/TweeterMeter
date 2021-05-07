@@ -8,14 +8,6 @@ const twitterClient = new Twitter({
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 })
 
-router.get('/', async (req, res, next) => {
-  try {
-    res.send([])
-  } catch (err) {
-    next(err)
-  }
-})
-
 router.post('/', async (req, res, next) => {
   try {
     // Imports the Google Cloud client library

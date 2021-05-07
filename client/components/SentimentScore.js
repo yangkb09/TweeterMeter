@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {_getScore} from '../store/form'
+// import {_getScore} from '../store/form'
 
 export class SentimentScore extends React.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ export class SentimentScore extends React.Component {
     this.getMagnitude = this.getMagnitude.bind(this)
   }
   componentDidMount() {
-    this.props.getScore()
+    // this.props.getScore()
   }
 
   getSentimentScore(score) {
@@ -122,7 +122,7 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    getScore: () => dispatch(_getScore())
+    // getScore: () => dispatch(_getScore())
   }
 }
 

@@ -13,7 +13,7 @@ router.post('/', async (req, res, next) => {
     // Imports the Google Cloud client library
     const language = require('@google-cloud/language')
 
-    // Instantiates a client
+    // Instantiates a Google client
     const client = new language.LanguageServiceClient({
       keyFilename: 'google-credentials.json',
       projectId: 'sentiment-analys-1611430622359'

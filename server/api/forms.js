@@ -15,7 +15,7 @@ router.post('/', async (req, res, next) => {
 
     // Instantiates a client
     const client = new language.LanguageServiceClient({
-      keyFilename: 'google.json',
+      keyFilename: 'google-credentials.json',
       projectId: 'sentiment-analys-1611430622359'
     })
 

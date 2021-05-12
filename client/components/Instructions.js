@@ -8,7 +8,9 @@ export const Instructions = () => {
         Gauge the sentiment of Twitter users through machine learning!
         <ol className="smallText">
           <li>Enter a Twitter handle</li>
-          <li>Click "analyze"</li>
+          <li>
+            Click "<span id="blue">analyze</span>"
+          </li>
           <li>Let results generate</li>
         </ol>
         <div className="smallText">

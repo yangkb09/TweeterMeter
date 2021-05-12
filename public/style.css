@@ -3,13 +3,20 @@
   font-weight: bold;
 }
 
+.secondary {
+  font-weight: normal;
+  font-style: italic;
+}
+
 .gridContainer {
   display: grid;
   grid-template-areas:
     'title title title title title title'
     'logo logo form form form form'
-    'logo logo sentiment sentiment sentiment sentiment';
+    'logo logo sentiment sentiment sentiment sentiment'
+    'instructions instructions sentiment sentiment sentiment sentiment';
   grid-template-columns: repeat(6, 1fr);
+  /* grid-template-rows: 1fr 2fr 1fr 1fr; */
   grid-gap: 10px;
 }
 
@@ -21,6 +28,11 @@
 #twitterLogo {
   grid-area: logo;
   max-width: 100%;
+  max-height: 100%;
+}
+
+#instructions {
+  grid-area: instructions;
 }
 
 #formCard {
@@ -137,10 +149,6 @@ button:hover {
   font-size: 18px;
 }
 
-.secondary {
-  font-weight: normal;
-}
-
 img#location {
   max-width: 17px;
   color: #e1e8ed;
@@ -150,4 +158,8 @@ img#location {
   display: inline-block;
   padding: 3px;
   font-weight: normal;
+}
+
+.smallText {
+  font-size: 20px;
 }

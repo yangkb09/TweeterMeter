@@ -5,10 +5,10 @@ export const Instructions = () => {
   return (
     <div className="card" id="instructions">
       <div className="container, medText">
-        Gauge the sentiment of twitter users through machine learning!
+        Gauge the sentiment of Twitter users through machine learning!
         <ol className="smallText">
-          <li>Enter a Twitter Handle</li>
-          <li>Click "Analyze"</li>
+          <li>Enter a Twitter handle</li>
+          <li>Click "analyze"</li>
           <li>Let results generate</li>
         </ol>
         <div className="smallText">

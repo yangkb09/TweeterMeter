@@ -54,8 +54,8 @@ export class SentimentScore extends React.Component {
   }
 
   render() {
-    const sentiment = this.getSentimentScore(this.props.form.score) || [];
-    const magnitude = this.getMagnitude(this.props.form.magnitude) || [];
+    const sentiment = this.getSentimentScore(this.props.form.score) || []
+    const magnitude = this.getMagnitude(this.props.form.magnitude) || []
     if (Object.keys(this.props.form).length > 0) {
       return (
         <div className="card" id="sentimentCard">
@@ -72,39 +72,33 @@ export class SentimentScore extends React.Component {
                 id="twitterProfBanner"
               />
             </div>
-            <div id="name">{this.props.form.name}</div>
-            <span className="secondary, inlineBlock" id="screenName">
-              @{this.props.form.screenName}
-            </span>
-            <span className="secondary, inlineBlock" id="location">
-              <img src="/images/locationMarker.png" id="location" />
-              {this.props.form.location}
-            </span>
-            <div id="score">
-              Sentiment:{' '}
-              <span className="secondary, inlineBlock">
-                {sentiment[0]},
+            <div id="sentimentCardBasicInfo">
+              <div id="name">{this.props.form.name}</div>
+              <span className="secondary, inlineBlock" id="screenName">
+                @{this.props.form.screenName}
               </span>
-              <span className="secondary, inlineBlock">
-                {sentiment[1]}
+              <span className="secondary, inlineBlock" id="location">
+                <img src="/images/locationMarker.png" id="location" />
+                {this.props.form.location}
               </span>
             </div>
-            <div id="magnitude">
-              Magnitude:{' '}
-              <span className="secondary, inlineBlock">
-                {magnitude[0]},
-              </span>
-              <span className="secondary, inlineBlock">
-                {magnitude[1]}
-              </span>
+            <div id="sentimentCardAnalysis">
+              <div id="score">
+                Sentiment:{' '}
+                <span className="secondary, inlineBlock">{sentiment[0]},</span>
+                <span className="secondary, inlineBlock">{sentiment[1]}</span>
+              </div>
+              <div id="magnitude">
+                Magnitude:{' '}
+                <span className="secondary, inlineBlock">{magnitude[0]},</span>
+                <span className="secondary, inlineBlock">{magnitude[1]}</span>
+              </div>
             </div>
           </div>
         </div>
       )
     } else {
-      return (
-        <div></div>
-      )
+      return <div />
     }
   }
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import {connect} from 'react-redux'
 import TextForm from './TextForm'
 import SentimentScore from './SentimentScore'
 import Instructions from './Instructions'
@@ -20,4 +19,4 @@ export const UserHome = () => {
   )
 }
 
-export default connect(null)(UserHome)
+export default UserHome

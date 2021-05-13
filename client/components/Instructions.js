@@ -1,5 +1,4 @@
 import React from 'react'
-import {connect} from 'react-redux'
 
 export const Instructions = () => {
   return (
@@ -28,4 +27,4 @@ export const Instructions = () => {
   )
 }
 
-export default connect(null)(Instructions)
+export default Instructions

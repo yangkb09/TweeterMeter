@@ -33,22 +33,22 @@ export class SentimentScore extends React.Component {
   }
 
   getMagnitude(magnitude) {
-    if (magnitude < 2) {
+    if (magnitude < 20) {
       return ['Very Low', magnitude.toFixed(2)]
     }
-    if (magnitude < 5) {
+    if (magnitude < 40) {
       return ['Low', magnitude.toFixed(2)]
     }
-    if (magnitude < 10) {
+    if (magnitude < 60) {
       return ['Medium', magnitude.toFixed(2)]
     }
-    if (magnitude < 15) {
+    if (magnitude < 80) {
       return ['Medium-high', magnitude.toFixed(2)]
     }
-    if (magnitude < 25) {
+    if (magnitude < 100) {
       return ['High', magnitude.toFixed(2)]
     }
-    if (magnitude >= 25) {
+    if (magnitude >= 100) {
       return ['Very High', magnitude.toFixed(2)]
     }
   }

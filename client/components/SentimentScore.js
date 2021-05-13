@@ -54,6 +54,7 @@ export class SentimentScore extends React.Component {
   }
 
   render() {
+    console.log('THIS.PROPS.FORM ', this.props.form)
     const sentiment = this.getSentimentScore(this.props.form.score) || []
     const magnitude = this.getMagnitude(this.props.form.magnitude) || []
     if (Object.keys(this.props.form).length > 0) {
@@ -77,10 +78,18 @@ export class SentimentScore extends React.Component {
               <span className="secondary, inlineBlock" id="screenName">
                 @{this.props.form.screenName}
               </span>
-              <span className="secondary, inlineBlock" id="location">
+              {this.props.form.location ? (
+                <span className="secondary, inlineBlock" id="location">
+                  <img src="/images/locationMarker.png" id="location" />
+                  {this.props.form.location}
+                </span>
+              ) : (
+                <div />
+              )}
+              {/* <span className="secondary, inlineBlock" id="location">
                 <img src="/images/locationMarker.png" id="location" />
                 {this.props.form.location}
-              </span>
+              </span> */}
             </div>
             <div id="sentimentCardAnalysis">
               <div id="score">

@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 8080
 const app = express()
 module.exports = app
 
-/**
+/*
  * In your development environment, you can keep all of your
  * app's secret API keys in a file called `secrets.js`, in your project
  * root. This file is included in the .gitignore - it will NOT be tracked

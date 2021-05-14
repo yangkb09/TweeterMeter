@@ -36,16 +36,16 @@ router.post('/', async (req, res, next) => {
           twitterClient.get(
             '/statuses/user_timeline.json',
             {screen_name: twitterUsername, count: 200, include_rts: false},
-            async function(error, tweets) {
-              if (error) {
-                throw error
+            async function(errorTimeline, tweets) {
+              if (errorTimeline) {
+                throw errorTimeline
               } else {
-                let holder = ''
+                let rawTweets = ''
                 for (let i = 0; i < tweets.length; i++) {
-                  holder += tweets[i].text
+                  rawTweets += tweets[i].text
                 }
                 // The text to analyze: an user's cleaned tweets
-                const cleanedTweets = holder.replace(
+                const cleanedTweets = rawTweets.replace(
                   /(?:https?|ftp):\/\/[\n\S]+/g,
                   ''
                 )

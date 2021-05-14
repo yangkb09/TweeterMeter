@@ -27,7 +27,8 @@ router.post('/', async (req, res, next) => {
       {screen_name: twitterUsername},
       function(error, profile) {
         if (error) {
-          throw error
+          // throw error
+          res.send('User does not exist')
         } else {
           const profileImg = profile.profile_image_url.replace(/_normal/, '')
           const profileBanner = profile.profile_banner_url
@@ -38,7 +39,8 @@ router.post('/', async (req, res, next) => {
             {screen_name: twitterUsername, count: 200, include_rts: false},
             async function(errorTimeline, tweets) {
               if (errorTimeline) {
-                throw errorTimeline
+                // throw errorTimeline
+                res.send('User is private')
               } else {
                 let rawTweets = ''
                 for (let i = 0; i < tweets.length; i++) {

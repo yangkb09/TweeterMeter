@@ -54,9 +54,30 @@ export class SentimentScore extends React.Component {
   }
 
   render() {
+    console.log('THIS.PROPS.FORM', this.props.form)
+    console.log(
+      'Object.keys(this.props.form).length',
+      Object.keys(this.props.form).length
+    )
     const sentiment = this.getSentimentScore(this.props.form.score) || []
     const magnitude = this.getMagnitude(this.props.form.magnitude) || []
-    if (Object.keys(this.props.form).length > 0) {
+    if (this.props.form === 'User does not exist') {
+      return (
+        <div className="card" id="sentimentCard">
+          <div className="container">
+            Sorry, that user does not exist. Try a different handle!
+          </div>
+        </div>
+      )
+    } else if (this.props.form === 'User is private') {
+      return (
+        <div className="card" id="sentimentCard">
+          <div className="container">
+            Sorry, that user's account is private. Try a different handle!
+          </div>
+        </div>
+      )
+    } else if (Object.keys(this.props.form).length > 0) {
       return (
         <div className="card" id="sentimentCard">
           <div className="container">

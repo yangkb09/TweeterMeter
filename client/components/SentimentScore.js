@@ -66,6 +66,11 @@ export class SentimentScore extends React.Component {
         <div className="card" id="sentimentCard">
           <div className="container">
             Sorry, that user does not exist. Try a different handle!
+            <img
+              src="images/nonexistentUser.png"
+              alt="Eyes looking in through blinds"
+              className="storySet"
+            />
           </div>
         </div>
       )
@@ -74,6 +79,11 @@ export class SentimentScore extends React.Component {
         <div className="card" id="sentimentCard">
           <div className="container">
             Sorry, that user's account is private. Try a different handle!
+            <img
+              src="images/401Error.png"
+              alt="401 Error Image"
+              className="storySet"
+            />
           </div>
         </div>
       )
@@ -123,7 +133,17 @@ export class SentimentScore extends React.Component {
         </div>
       )
     } else {
-      return <div />
+      return (
+        <div className="card" id="sentimentCard">
+          <div className="container">
+            <img
+              src="images/sentimentCard.png"
+              alt="Sentiment Survey Image"
+              className="storySet"
+            />
+          </div>
+        </div>
+      )
     }
   }
 }

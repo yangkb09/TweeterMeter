@@ -4,9 +4,20 @@ import {connect} from 'react-redux'
 export class SentimentScore extends React.Component {
   constructor(props) {
     super(props)
+    // this.state = {
+    //   loadTriggered: false,
+    // }
     this.getSentimentScore = this.getSentimentScore.bind(this)
     this.getMagnitude = this.getMagnitude.bind(this)
   }
+
+  // componentDidMount() {
+  //   this.setState({loadTriggered: false})
+  // }
+
+  // componentDidUpdate() {
+  //   if (this.props.form) {this.setState({loadTriggered: true})}
+  // }
 
   getSentimentScore(score) {
     if (score < -0.75) {
@@ -54,6 +65,7 @@ export class SentimentScore extends React.Component {
   }
 
   render() {
+    console.log('THIS.STATE ', this.state)
     console.log('THIS.PROPS.FORM', this.props.form)
     console.log(
       'Object.keys(this.props.form).length',

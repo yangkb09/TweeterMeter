@@ -1,11 +1,13 @@
 import React from 'react'
 import {connect} from 'react-redux'
+// import { UserDoesNotExist } from '../storyset'
+import UserDoesNotExist from './storyset/UserDoesNotExist.js'
 
 export class SentimentScore extends React.Component {
   constructor(props) {
     super(props)
     // this.state = {
-    //   loadTriggered: false,
+    //   isLoading: false,
     // }
     this.getSentimentScore = this.getSentimentScore.bind(this)
     this.getMagnitude = this.getMagnitude.bind(this)
@@ -66,11 +68,12 @@ export class SentimentScore extends React.Component {
 
   render() {
     console.log('THIS.STATE ', this.state)
+    console.log('THIS.PROPS', this.props)
     console.log('THIS.PROPS.FORM', this.props.form)
-    console.log(
-      'Object.keys(this.props.form).length',
-      Object.keys(this.props.form).length
-    )
+    // console.log(
+    //   'Object.keys(this.props.form).length',
+    //   Object.keys(this.props.form).length
+    // )
     const sentiment = this.getSentimentScore(this.props.form.score) || []
     const magnitude = this.getMagnitude(this.props.form.magnitude) || []
     if (this.props.form === 'User does not exist') {
@@ -78,11 +81,12 @@ export class SentimentScore extends React.Component {
         <div className="card" id="sentimentCard">
           <div className="container">
             Sorry, that user does not exist. Try a different handle!
-            <img
+            {/* <img
               src="images/nonexistentUser.png"
               alt="Eyes looking in through blinds"
               className="storySet"
-            />
+            /> */}
+            <UserDoesNotExist />
           </div>
         </div>
       )
@@ -162,7 +166,8 @@ export class SentimentScore extends React.Component {
 
 const mapState = state => {
   return {
-    form: state.form
+    form: state.form,
+    isLoading: state.isLoading
   }
 }
 

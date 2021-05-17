@@ -45,6 +45,7 @@
     "axios": "^0.21.1",
     "compression": "^1.7.3",
     "connect-session-sequelize": "^6.0.0",
+    "css-loader": "^5.2.4",
     "express": "^4.16.4",
     "express-session": "^1.15.1",
     "history": "^4.9.0",
@@ -63,6 +64,7 @@
     "redux-thunk": "^2.3.0",
     "sequelize": "^5.22.3",
     "socket.io": "^2.2.0",
+    "style-loader": "^2.0.0",
     "twitter": "^1.7.1",
     "twitter-lite": "^1.1.0",
     "twitter-v2": "^1.1.0"

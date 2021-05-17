@@ -17,6 +17,12 @@ export class TextForm extends React.Component {
       [event.target.name]: event.target.value
     })
   }
+
+  // toggleLoading() {
+  //   this.props.isLoading = true;
+  //   console.log('this.state', this.state)
+  // }
+
   handleSubmit(event) {
     event.preventDefault()
     this.props.postForm(this.state)
@@ -25,6 +31,7 @@ export class TextForm extends React.Component {
     })
   }
   render() {
+    console.log('this.props textform', this.props)
     return (
       <div className="card" id="formCard">
         <div>
@@ -49,7 +56,8 @@ export class TextForm extends React.Component {
 
 const mapState = state => {
   return {
-    formText: state.formText
+    formText: state.formText,
+    isLoading: state.isLoading
   }
 }
 

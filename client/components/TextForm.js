@@ -32,7 +32,6 @@ export class TextForm extends React.Component {
     })
   }
   render() {
-    // console.log('this.props textform', this.props)
     console.log('TOGGLE TRUE', this.props.toggleTrue)
     return (
       <div className="card" id="formCard">

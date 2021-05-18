@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 // import { UserDoesNotExist } from '../storyset'
 import UserDoesNotExist from './storyset/UserDoesNotExist.js'
+import {toggleTrue} from '../store/loading'
 
 export class SentimentScore extends React.Component {
   constructor(props) {
@@ -171,4 +172,10 @@ const mapState = state => {
   }
 }
 
-export default connect(mapState, null)(SentimentScore)
+const mapDispatch = dispatch => {
+  return {
+    toggleTrue: () => dispatch(toggleTrue())
+  }
+}
+
+export default connect(mapState, mapDispatch)(SentimentScore)

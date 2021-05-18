@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {_submitForm} from '../store/form'
+import {toggleTrue} from '../store/loading'
 
 export class TextForm extends React.Component {
   constructor() {
@@ -31,7 +32,8 @@ export class TextForm extends React.Component {
     })
   }
   render() {
-    console.log('this.props textform', this.props)
+    // console.log('this.props textform', this.props)
+    console.log('TOGGLE TRUE', this.props.toggleTrue)
     return (
       <div className="card" id="formCard">
         <div>
@@ -45,7 +47,9 @@ export class TextForm extends React.Component {
                 value={this.state.formText}
                 onChange={this.handleChange}
               />
-              <button type="submit">Analyze</button>
+              <button type="submit" onClick={() => this.props.toggleTrue()}>
+                Analyze
+              </button>
             </div>
           </form>
         </div>
@@ -63,7 +67,8 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    postForm: text => dispatch(_submitForm(text))
+    postForm: text => dispatch(_submitForm(text)),
+    toggleTrue: () => dispatch(toggleTrue())
   }
 }
 

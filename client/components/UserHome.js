@@ -2,7 +2,7 @@ import React from 'react'
 import TextForm from './TextForm'
 import SentimentScore from './SentimentScore'
 import Instructions from './Instructions'
-import LoadingRocket from './storyset/LoadingRocket'
+import LoadingScreen from './LoadingScreen'
 
 export const UserHome = () => {
   return (
@@ -15,7 +15,7 @@ export const UserHome = () => {
       />
       <Instructions />
       <TextForm />
-      <LoadingRocket />
+      {/* <LoadingScreen /> */}
       <SentimentScore />
     </div>
   )

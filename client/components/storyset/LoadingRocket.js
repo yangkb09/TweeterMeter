@@ -10,7 +10,7 @@ function LoadingRocket() {
       viewBox="0 0 500 500"
     >
       <g
-        className="animable"
+        className="space"
         style={{
           WebkitTransformOrigin: 250.869,
           MsTransformOrigin: 250.869,
@@ -39,7 +39,7 @@ function LoadingRocket() {
         />
       </g>
       <g
-        className="animable"
+        className="smoke"
         style={{
           WebkitTransformOrigin: 250.866,
           MsTransformOrigin: 250.866,
@@ -385,7 +385,7 @@ function LoadingRocket() {
         </g>
       </g>
       <g
-        className="animable animator-active"
+        className="rocket"
         style={{
           WebkitTransformOrigin: 250,
           MsTransformOrigin: 250,
@@ -2480,7 +2480,7 @@ function LoadingRocket() {
         }}
       >
         <g
-          className="animable"
+          className="stars"
           style={{
             WebkitTransformOrigin: 254.565,
             MsTransformOrigin: 254.565,
@@ -2904,7 +2904,7 @@ function LoadingRocket() {
         }}
       >
         <g
-          className="animable"
+          className="meteorites"
           style={{
             WebkitTransformOrigin: 261.7,
             MsTransformOrigin: 261.7,

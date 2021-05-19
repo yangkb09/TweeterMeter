@@ -2,29 +2,28 @@ svg#freepik_stories-to-the-stars:not(.animated) .animable {
   opacity: 0;
 }
 
-svg#freepik_stories-to-the-stars.animated #freepik--Space--inject-1--inject-7 {
+.space {
   animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) lightSpeedRight;
   animation-delay: 0s;
 }
 
-svg#freepik_stories-to-the-stars.animated #freepik--Smoke--inject-1--inject-7 {
+.smoke {
   animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) zoomIn;
   animation-delay: 0s;
 }
 
-svg#freepik_stories-to-the-stars.animated #freepik--Rocket--inject-1--inject-7 {
+.rocket {
   animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) zoomIn,
     1.5s Infinite linear floating;
   animation-delay: 0s, 1s;
 }
 
-svg#freepik_stories-to-the-stars.animated #freepik--Stars--inject-1--inject-7 {
+.stars {
   animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) slideUp;
   animation-delay: 0s;
 }
 
-svg#freepik_stories-to-the-stars.animated
-  #freepik--Meteorites--inject-1--inject-7 {
+.meteorites {
   animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) zoomIn;
   animation-delay: 0s;
 }

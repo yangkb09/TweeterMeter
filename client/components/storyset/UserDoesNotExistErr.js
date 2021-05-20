@@ -1,5 +1,5 @@
 import React from 'react'
-import './UserDoesNotExist.css'
+import './UserDoesNotExistErr.css'
 
 function UserDoesNotExist() {
   return (

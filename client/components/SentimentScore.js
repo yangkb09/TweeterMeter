@@ -1,7 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 // import { UserDoesNotExist } from '../storyset'
-import UserDoesNotExist from './storyset/UserDoesNotExist.js'
+import UserDoesNotExistErr from './storyset/UserDoesNotExistErr.js'
+import NotAuthorizedErr from './storyset/NotAuthorizedErr.js'
 import {toggleTrue} from '../store/loading'
 import Survey from './storyset/Survey'
 
@@ -81,27 +82,23 @@ export class SentimentScore extends React.Component {
     if (this.props.form === 'User does not exist') {
       return (
         <div className="card" id="sentimentCard">
-          <div className="container">
+          <div className="container storyset">
             Sorry, that user does not exist. Try a different handle!
             {/* <img
               src="images/nonexistentUser.png"
               alt="Eyes looking in through blinds"
               className="storySet"
             /> */}
-            <UserDoesNotExist />
+            <UserDoesNotExistErr />
           </div>
         </div>
       )
     } else if (this.props.form === 'User is private') {
       return (
         <div className="card" id="sentimentCard">
-          <div className="container">
+          <div className="container storyset">
             Sorry, that user's account is private. Try a different handle!
-            <img
-              src="images/401Error.png"
-              alt="401 Error Image"
-              className="storySet"
-            />
+            <NotAuthorizedErr />
           </div>
         </div>
       )
@@ -153,12 +150,7 @@ export class SentimentScore extends React.Component {
     } else {
       return (
         <div className="card" id="sentimentCard">
-          <div className="container">
-            {/* <img
-              src="images/sentimentCard.png"
-              alt="Sentiment Survey Image"
-              className="storySet"
-            /> */}
+          <div className="container storyset">
             <Survey />
           </div>
         </div>

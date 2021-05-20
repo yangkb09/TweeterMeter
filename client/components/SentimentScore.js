@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 // import { UserDoesNotExist } from '../storyset'
 import UserDoesNotExist from './storyset/UserDoesNotExist.js'
 import {toggleTrue} from '../store/loading'
+import Survey from './storyset/Survey'
 
 export class SentimentScore extends React.Component {
   constructor(props) {
@@ -153,11 +154,12 @@ export class SentimentScore extends React.Component {
       return (
         <div className="card" id="sentimentCard">
           <div className="container">
-            <img
+            {/* <img
               src="images/sentimentCard.png"
               alt="Sentiment Survey Image"
               className="storySet"
-            />
+            /> */}
+            <Survey />
           </div>
         </div>
       )

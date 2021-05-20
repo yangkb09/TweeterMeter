@@ -81,7 +81,7 @@ export class SentimentScore extends React.Component {
     const magnitude = this.getMagnitude(this.props.form.magnitude) || []
     if (this.props.form === 'User does not exist') {
       return (
-        <div className="card" id="sentimentCard">
+        <div className="card sentimentCard">
           <div className="container storyset">
             Sorry, that user does not exist. Try a different handle!
             <UserDoesNotExistErr />
@@ -90,7 +90,7 @@ export class SentimentScore extends React.Component {
       )
     } else if (this.props.form === 'User is private') {
       return (
-        <div className="card" id="sentimentCard">
+        <div className="card sentimentCard">
           <div className="container storyset">
             Sorry, that user's account is private. Try a different handle!
             <NotAuthorizedErr />
@@ -99,7 +99,7 @@ export class SentimentScore extends React.Component {
       )
     } else if (Object.keys(this.props.form).length > 0) {
       return (
-        <div className="card" id="sentimentCard">
+        <div className="card sentimentCard">
           <div className="container">
             <div id="picContainer">
               <img
@@ -144,7 +144,7 @@ export class SentimentScore extends React.Component {
       )
     } else {
       return (
-        <div className="card" id="sentimentCard">
+        <div className="card sentimentCard">
           <div className="container storyset">
             <Survey />
           </div>

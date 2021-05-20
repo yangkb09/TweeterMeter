@@ -84,11 +84,6 @@ export class SentimentScore extends React.Component {
         <div className="card" id="sentimentCard">
           <div className="container storyset">
             Sorry, that user does not exist. Try a different handle!
-            {/* <img
-              src="images/nonexistentUser.png"
-              alt="Eyes looking in through blinds"
-              className="storySet"
-            /> */}
             <UserDoesNotExistErr />
           </div>
         </div>

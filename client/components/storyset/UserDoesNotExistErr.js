@@ -40,7 +40,7 @@ function UserDoesNotExist() {
         />
       </g>
       <g
-        className="animable"
+        className="character"
         style={{
           WebkitTransformOrigin: 260.389,
           MsTransformOrigin: 260.389,

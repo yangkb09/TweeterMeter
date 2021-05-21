@@ -38,7 +38,7 @@
   grid-area: form;
 }
 
-#sentimentCard {
+.sentimentCard {
   grid-area: sentiment;
 }
 

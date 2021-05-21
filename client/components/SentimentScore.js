@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 // import { UserDoesNotExist } from '../storyset'
 import UserDoesNotExistErr from './storyset/UserDoesNotExistErr.js'
 import NotAuthorizedErr from './storyset/NotAuthorizedErr.js'
-import {toggleTrue} from '../store/loading'
+import {toggleLoad} from '../store/loading'
 import Survey from './storyset/Survey'
 
 export class SentimentScore extends React.Component {
@@ -21,8 +21,13 @@ export class SentimentScore extends React.Component {
   // }
 
   // componentDidUpdate() {
-  //   if (this.props.form) {this.setState({loadTriggered: true})}
+  //   console.log('CDIDUPDATE PROPS: ', this.props)
+  //   if (this.props.isLoading) {
+  //     this.props.toggleLoad();
+  //   }
   // }
+
+  //will run after you rendered for the first time if component changed
 
   getSentimentScore(score) {
     if (score < -0.75) {
@@ -70,7 +75,7 @@ export class SentimentScore extends React.Component {
   }
 
   render() {
-    console.log('THIS.STATE ', this.state)
+    // console.log('THIS.STATE ', this.state)
     console.log('THIS.PROPS', this.props)
     console.log('THIS.PROPS.FORM', this.props.form)
     // console.log(
@@ -163,7 +168,7 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    toggleTrue: () => dispatch(toggleTrue())
+    toggleLoad: () => dispatch(toggleLoad())
   }
 }
 

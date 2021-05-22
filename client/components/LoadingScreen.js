@@ -4,9 +4,11 @@ import LoadingRocket from './storyset/LoadingRocket'
 export const LoadingScreen = () => {
   return (
     <div className="card sentimentCard">
-      <div className="container storyset">
+      <div className="container center">
         Hang on - hacking into the mainframe!
-        <LoadingRocket />
+        <div className="storyset">
+          <LoadingRocket />
+        </div>
       </div>
     </div>
   )

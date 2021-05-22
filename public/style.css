@@ -198,3 +198,36 @@ img#location {
   place-self: center;
   max-width: 50%;
 }
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 800px) {
+  /* .gridContainer {
+    display: grid;
+    grid-template-areas:
+      'title'
+      'logo'
+      'instructions'
+      'form'
+      'sentiment';
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+  }
+  #twitterLogo {
+    grid-area: logo;
+    max-width: 25%;
+  } */
+  .gridContainer {
+    display: grid;
+    grid-template-areas:
+      'logo title'
+      'instructions instructions'
+      'form form'
+      'sentiment sentiment';
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  #twitterLogo {
+    grid-area: logo;
+    max-width: 25%;
+  }
+}

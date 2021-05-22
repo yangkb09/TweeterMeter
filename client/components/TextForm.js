@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {_submitForm} from '../store/form'
-import {_toggleLoad} from '../store/loading'
 
 export class TextForm extends React.Component {
   constructor() {
@@ -15,12 +14,12 @@ export class TextForm extends React.Component {
 
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value //incase we have multiple inputs, knows hwere to put
+      [event.target.name]: event.target.value
     })
   }
 
   handleSubmit(event) {
-    event.preventDefault() //dont want to refresh bc unmount/mou t
+    event.preventDefault()
     this.props.postForm(this.state)
     this.setState({
       formText: ''
@@ -40,7 +39,6 @@ export class TextForm extends React.Component {
                 value={this.state.formText}
                 onChange={this.handleChange}
               />
-              {/* <button type="submit" onClick={() => this.props.toggleLoad()}></button> */}
               <button type="submit">Analyze</button>
             </div>
           </form>
@@ -60,7 +58,6 @@ const mapState = state => {
 const mapDispatch = dispatch => {
   return {
     postForm: text => dispatch(_submitForm(text))
-    // toggleLoad: () => dispatch(_toggleLoad())
   }
 }
 

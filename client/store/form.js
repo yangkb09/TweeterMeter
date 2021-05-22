@@ -8,12 +8,25 @@ export const submitForm = text => ({
   text
 })
 
+// export const _submitForm = text => async dispatch => {
+//   try {
+//     dispatch(toggleLoad())
+//     const {data} = await axios.post('/api/home', text)
+//     dispatch(submitForm(data))
+//     dispatch(toggleLoad())
+//   } catch (err) {
+//     console.log(err)
+//   }
+// }
+
 export const _submitForm = text => async dispatch => {
   try {
     dispatch(toggleLoad())
     const {data} = await axios.post('/api/home', text)
     dispatch(submitForm(data))
-    dispatch(toggleLoad())
+    setTimeout(() => {
+      dispatch(toggleLoad())
+    }, 2000)
   } catch (err) {
     console.log(err)
   }

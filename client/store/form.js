@@ -10,10 +10,10 @@ export const submitForm = text => ({
 
 export const _submitForm = text => async dispatch => {
   try {
-    const {data} = await axios.post('/api/home', text)
     dispatch(toggleLoad())
-    // console.log('TOGGLE LOAD', toggleLoad)
-    dispatch(submitForm(data)) //sending action to reducer
+    const {data} = await axios.post('/api/home', text)
+    dispatch(submitForm(data))
+    dispatch(toggleLoad())
   } catch (err) {
     console.log(err)
   }

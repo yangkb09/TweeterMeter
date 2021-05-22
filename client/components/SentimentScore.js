@@ -1,33 +1,15 @@
 import React from 'react'
 import {connect} from 'react-redux'
-// import { UserDoesNotExist } from '../storyset'
 import UserDoesNotExistErr from './storyset/UserDoesNotExistErr.js'
 import NotAuthorizedErr from './storyset/NotAuthorizedErr.js'
-import {toggleLoad} from '../store/loading'
 import Survey from './storyset/Survey'
 
 export class SentimentScore extends React.Component {
   constructor(props) {
     super(props)
-    // this.state = {
-    //   isLoading: false,
-    // }
-    this.getSentimentScore = this.getSentimentScore.bind(this)
+    this.getSentimentScore = this.getSentimentScore.bind(this) //dont have to bind, can make funcs elsewhere and import - utility.js
     this.getMagnitude = this.getMagnitude.bind(this)
   }
-
-  // componentDidMount() {
-  //   this.setState({loadTriggered: false})
-  // }
-
-  // componentDidUpdate() {
-  //   console.log('CDIDUPDATE PROPS: ', this.props)
-  //   if (this.props.isLoading) {
-  //     this.props.toggleLoad();
-  //   }
-  // }
-
-  //will run after you rendered for the first time if component changed
 
   getSentimentScore(score) {
     if (score < -0.75) {
@@ -75,21 +57,16 @@ export class SentimentScore extends React.Component {
   }
 
   render() {
-    // console.log('THIS.STATE ', this.state)
-    console.log('THIS.PROPS', this.props)
-    console.log('THIS.PROPS.FORM', this.props.form)
-    // console.log(
-    //   'Object.keys(this.props.form).length',
-    //   Object.keys(this.props.form).length
-    // )
     const sentiment = this.getSentimentScore(this.props.form.score) || []
     const magnitude = this.getMagnitude(this.props.form.magnitude) || []
     if (this.props.form === 'User does not exist') {
       return (
         <div className="card sentimentCard">
-          <div className="container storyset">
+          <div className="container">
             Sorry, that user does not exist. Try a different handle!
-            <UserDoesNotExistErr />
+            <div className="container storyset">
+              <UserDoesNotExistErr />
+            </div>
           </div>
         </div>
       )
@@ -161,15 +138,8 @@ export class SentimentScore extends React.Component {
 
 const mapState = state => {
   return {
-    form: state.form,
-    isLoading: state.isLoading
+    form: state.form
   }
 }
 
-const mapDispatch = dispatch => {
-  return {
-    toggleLoad: () => dispatch(toggleLoad())
-  }
-}
-
-export default connect(mapState, mapDispatch)(SentimentScore)
+export default connect(mapState, null)(SentimentScore)

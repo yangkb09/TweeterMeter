@@ -3,30 +3,10 @@ import TextForm from './TextForm'
 import SentimentScore from './SentimentScore'
 import Instructions from './Instructions'
 import LoadingScreen from './LoadingScreen'
-
 import {connect} from 'react-redux'
-
-// export const UserHome = () => {
-//   return (
-//     <div className="gridContainer">
-//       <div id="title">TweeterMeter</div>
-//       <img
-//         src="/images/twitterLogo.png"
-//         alt="White Twitter Logo"
-//         id="twitterLogo"
-//       />
-//       <Instructions />
-//       <TextForm />
-//       <LoadingScreen />
-//       <SentimentScore />
-//     </div>
-//   )
-// }
-// export default UserHome
 
 export class UserHome extends React.Component {
   render() {
-    console.log('PROPS FORM', this.props.form)
     return (
       <div className="gridContainer">
         <div id="title">TweeterMeter</div>
@@ -44,7 +24,6 @@ export class UserHome extends React.Component {
 }
 const mapState = state => {
   return {
-    form: state.form,
     isLoading: state.isLoading
   }
 }

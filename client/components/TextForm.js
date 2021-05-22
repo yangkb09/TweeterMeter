@@ -15,25 +15,18 @@ export class TextForm extends React.Component {
 
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value //incase we have multiple inputs, knows hwere to put
     })
   }
 
-  // toggleLoading() {
-  //   this.props.isLoading = true;
-  //   console.log('this.state', this.state)
-  // }
-
   handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault() //dont want to refresh bc unmount/mou t
     this.props.postForm(this.state)
     this.setState({
       formText: ''
     })
   }
   render() {
-    // console.log('TOGGLE TRUE', this.props.toggleTrue)
-    console.log('this.props.isLoading ', this.props.isLoading)
     return (
       <div className="card" id="formCard">
         <div>
@@ -47,9 +40,8 @@ export class TextForm extends React.Component {
                 value={this.state.formText}
                 onChange={this.handleChange}
               />
-              <button type="submit" onClick={() => this.props.toggleLoad()}>
-                Analyze
-              </button>
+              {/* <button type="submit" onClick={() => this.props.toggleLoad()}></button> */}
+              <button type="submit">Analyze</button>
             </div>
           </form>
         </div>
@@ -67,8 +59,8 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    postForm: text => dispatch(_submitForm(text)),
-    toggleLoad: () => dispatch(_toggleLoad())
+    postForm: text => dispatch(_submitForm(text))
+    // toggleLoad: () => dispatch(_toggleLoad())
   }
 }
 

@@ -127,9 +127,6 @@ export class SentimentScore extends React.Component {
         <div className="card sentimentCard">
           <div className="container center">
             <Survey />
-            {/* <div className="storyset">
-              <Survey />
-            </div> */}
           </div>
         </div>
       )

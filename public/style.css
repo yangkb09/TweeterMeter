@@ -84,16 +84,12 @@ a {
   margin: 1em;
 }
 
+/* STORYSET SVGs */
 .center {
   display: grid;
   align-items: center;
   justify-items: center;
-  /* max-height: 100vh; */
 }
-
-/* .storyset {
-  height: 10vh;
-} */
 
 .animated {
   max-height: 40vh;
@@ -206,21 +202,6 @@ img#location {
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 800px) {
-  /* .gridContainer {
-    display: grid;
-    grid-template-areas:
-      'title'
-      'logo'
-      'instructions'
-      'form'
-      'sentiment';
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 10px;
-  }
-  #twitterLogo {
-    grid-area: logo;
-    max-width: 25%;
-  } */
   .gridContainer {
     display: grid;
     grid-template-areas:

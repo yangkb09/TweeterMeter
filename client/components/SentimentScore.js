@@ -64,9 +64,7 @@ export class SentimentScore extends React.Component {
         <div className="card sentimentCard">
           <div className="container center">
             Sorry, that user does not exist. Try a different handle!
-            <div className="storyset">
-              <UserDoesNotExistErr />
-            </div>
+            <UserDoesNotExistErr />
           </div>
         </div>
       )
@@ -75,9 +73,7 @@ export class SentimentScore extends React.Component {
         <div className="card sentimentCard">
           <div className="container center">
             Sorry, that user's account is private. Try a different handle!
-            <div className="storyset">
-              <NotAuthorizedErr />
-            </div>
+            <NotAuthorizedErr />
           </div>
         </div>
       )
@@ -130,9 +126,10 @@ export class SentimentScore extends React.Component {
       return (
         <div className="card sentimentCard">
           <div className="container center">
-            <div className="storyset">
+            <Survey />
+            {/* <div className="storyset">
               <Survey />
-            </div>
+            </div> */}
           </div>
         </div>
       )

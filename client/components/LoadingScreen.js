@@ -6,9 +6,7 @@ export const LoadingScreen = () => {
     <div className="card sentimentCard">
       <div className="container center">
         Hang on - hacking into the mainframe!
-        <div className="storyset">
-          <LoadingRocket />
-        </div>
+        <LoadingRocket />
       </div>
     </div>
   )

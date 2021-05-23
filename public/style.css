@@ -84,10 +84,20 @@ a {
   margin: 1em;
 }
 
-/* .center {
-  place-self: center;
-  max-width: 75%;
+.center {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  /* max-height: 100vh; */
+}
+
+/* .storyset {
+  height: 10vh;
 } */
+
+.animated {
+  max-height: 40vh;
+}
 
 /* FORM */
 
@@ -192,11 +202,6 @@ img#location {
 
 #sentimentCardBasicInfo {
   margin-top: 10px;
-}
-
-.storyset {
-  place-self: center;
-  max-width: 50%;
 }
 
 /* MEDIA QUERIES */

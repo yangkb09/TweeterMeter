@@ -7,7 +7,7 @@ import Survey from './storyset/Survey'
 export class SentimentScore extends React.Component {
   constructor(props) {
     super(props)
-    this.getSentimentScore = this.getSentimentScore.bind(this) //dont have to bind, can make funcs elsewhere and import - utility.js
+    this.getSentimentScore = this.getSentimentScore.bind(this)
     this.getMagnitude = this.getMagnitude.bind(this)
   }
 

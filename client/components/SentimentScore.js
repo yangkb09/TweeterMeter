@@ -62,7 +62,7 @@ export class SentimentScore extends React.Component {
     if (this.props.form === 'User does not exist') {
       return (
         <div className="card sentimentCard">
-          <div className="container center">
+          <div className="container center medText">
             Sorry, that user does not exist. Try a different handle!
             <UserDoesNotExistErr />
           </div>
@@ -71,7 +71,7 @@ export class SentimentScore extends React.Component {
     } else if (this.props.form === 'User is private') {
       return (
         <div className="card sentimentCard">
-          <div className="container center">
+          <div className="container center medText">
             Sorry, that user's account is private. Try a different handle!
             <NotAuthorizedErr />
           </div>
@@ -94,12 +94,20 @@ export class SentimentScore extends React.Component {
               />
             </div>
             <div id="sentimentCardBasicInfo">
-              <div id="name">{this.props.form.name}</div>
-              <span className="secondary, inlineBlock" id="screenName">
+              <div className="sentimentCardText" id="name">
+                {this.props.form.name}
+              </div>
+              <span
+                className="secondary, inlineBlock sentimentCardText"
+                id="screenName"
+              >
                 @{this.props.form.screenName}
               </span>
               {this.props.form.location ? (
-                <span className="secondary, inlineBlock" id="location">
+                <span
+                  className="secondary, inlineBlock sentimentCardText"
+                  id="location"
+                >
                   <img src="/images/locationMarker.png" id="location" />
                   {this.props.form.location}
                 </span>
@@ -108,15 +116,23 @@ export class SentimentScore extends React.Component {
               )}
             </div>
             <div id="sentimentCardAnalysis">
-              <div id="score">
+              <div className="sentimentCardText" id="score">
                 Sentiment:{' '}
-                <span className="secondary, inlineBlock">{sentiment[0]},</span>
-                <span className="secondary, inlineBlock">{sentiment[1]}</span>
+                <span className="secondary, inlineBlock sentimentCardText">
+                  {sentiment[0]},
+                </span>
+                <span className="secondary, inlineBlock sentimentCardText">
+                  {sentiment[1]}
+                </span>
               </div>
-              <div id="magnitude">
+              <div className="sentimentCardText" id="magnitude">
                 Magnitude:{' '}
-                <span className="secondary, inlineBlock">{magnitude[0]},</span>
-                <span className="secondary, inlineBlock">{magnitude[1]}</span>
+                <span className="secondary, inlineBlock sentimentCardText">
+                  {magnitude[0]},
+                </span>
+                <span className="secondary, inlineBlock sentimentCardText">
+                  {magnitude[1]}
+                </span>
               </div>
             </div>
           </div>

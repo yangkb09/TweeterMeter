@@ -5,21 +5,23 @@ export const Instructions = () => {
     <div className="card" id="instructions">
       <div className="container, medText">
         Gauge the sentiment of Twitter users through machine learning!
-        <ol className="smallText">
-          <li>Enter a Twitter handle</li>
-          <li>
+        <ol>
+          <li className="smallText">Enter a Twitter handle</li>
+          <li className="smallText">
             Click "<span id="blue">analyze</span>"
           </li>
-          <li>Let results generate</li>
+          <li className="smallText">View results</li>
         </ol>
-        <div className="smallText">
+        <div className="medText">
           Analysis:
           <ul>
-            <li>
+            <li className="smallText">
               Sentiment: emotion on a scale from negative (-1.0) to positive
               (1.0)
             </li>
-            <li>Magnitude: strength of emotion from 0 to infinity</li>
+            <li className="smallText">
+              Magnitude: strength of emotion from 0 to infinity
+            </li>
           </ul>
         </div>
       </div>

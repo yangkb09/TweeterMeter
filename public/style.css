@@ -2,6 +2,7 @@
 * {
   box-sizing: border-box;
   font-weight: bold;
+  font-size: 16px;
 }
 
 .secondary {
@@ -37,7 +38,7 @@ a {
 
 #title {
   grid-area: title;
-  font-size: 40px;
+  font-size: 2.75rem;
 }
 
 #twitterLogo {
@@ -69,7 +70,6 @@ a {
   transition: 0.2s;
   border-radius: 5px;
   justify-content: space-between;
-  font-size: 25px;
   background-color: #aab8c2;
 }
 
@@ -89,10 +89,11 @@ a {
   display: grid;
   align-items: center;
   justify-items: center;
+  padding-top: 0.8rem;
 }
 
 .animated {
-  max-height: 40vh;
+  max-height: 45vh;
 }
 
 /* FORM */
@@ -163,14 +164,16 @@ button:hover {
   border-radius: 15px;
 }
 
+.sentimentCardText {
+  font-size: 1.3rem;
+}
+
 #screenName {
   color: #e1e8ed;
-  font-size: 18px;
 }
 
 #location {
   color: #e1e8ed;
-  font-size: 18px;
 }
 
 img#location {
@@ -184,12 +187,14 @@ img#location {
   font-weight: normal;
 }
 
+/* FONT SIZE */
+
 .smallText {
-  font-size: 0.78em;
+  font-size: 1.1rem;
 }
 
 .medText {
-  font-size: 23px;
+  font-size: 1.5rem;
 }
 
 #sentimentCardAnalysis {

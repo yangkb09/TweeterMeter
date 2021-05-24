@@ -31,7 +31,9 @@ export class TextForm extends React.Component {
         <div>
           <form onSubmit={this.handleSubmit}>
             <div className="container">
-              <label htmlFor="formText">Enter a Twitter Handle:</label>
+              <label htmlFor="formText" className="medText">
+                Enter a Twitter Handle:
+              </label>
               <input
                 type="text"
                 placeholder="Username"

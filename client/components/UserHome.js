@@ -6,6 +6,9 @@ import LoadingScreen from './LoadingScreen'
 import {connect} from 'react-redux'
 
 export class UserHome extends React.Component {
+  componentDidMount() {
+    console.log(`Made by Kat Yang @ https://www.linkedin.com/in/yangkb09/`)
+  }
   render() {
     return (
       <div className="gridContainer">

@@ -12,7 +12,7 @@
 }
 
 body {
-  font-family: 'Helvetica Neue', 'Palatino', sans-serif;
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
   background-color: #657786;
   color: white;
 }
@@ -211,12 +211,14 @@ img#location {
 
 /* MEDIA QUERIES */
 
+/* tablet landscape */
 @media all and (min-width: 768px) and (max-width: 1024px) {
   * {
     font-size: 14px;
   }
 }
 
+/* tablet */
 @media all and (max-width: 768px) {
   .gridContainer {
     display: grid;
@@ -234,6 +236,7 @@ img#location {
   }
 }
 
+/* phone */
 @media all and (max-width: 480px) {
   * {
     font-size: 12px;
